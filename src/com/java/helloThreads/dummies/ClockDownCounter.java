@@ -3,6 +3,10 @@ package com.java.helloThreads.dummies;
 class ClockDownCounter extends Thread
 {
 	private int timerLimit;
+
+	/**
+	 * @param timerLimit in Seconds
+	 */
 	ClockDownCounter(int timerLimit)
 	{
 		this.timerLimit = timerLimit;
@@ -18,8 +22,7 @@ class ClockDownCounter extends Thread
 				sleep(1000);
 			} catch (InterruptedException e)
 			{
-				System.out.println("i was called for interruption");
-				//interrupt();
+				System.out.println("counter interrupted");
 			}
 		}
 	}
