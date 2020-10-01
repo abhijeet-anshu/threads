@@ -1,22 +1,24 @@
 package com.java.helloThreads.dummies;
 
 class ClockDownCounter extends Thread
+				               implements TimeMonitor
 {
 	private int timerLimit;
-
+	private int currentTime;
 	/**
 	 * @param timerLimit in Seconds
 	 */
 	ClockDownCounter(int timerLimit)
 	{
 		this.timerLimit = timerLimit;
+		currentTime = timerLimit;
 	}
 	@Override
 	public void run()
 	{
-		for(int i=timerLimit; i>=0; i--)
+		for(int currentTime=timerLimit; currentTime>=0; currentTime--)
 		{
-			System.out.println("T minus " + i);
+			System.out.println("T minus " + currentTime);
 			try
 			{
 				sleep(1000);
@@ -26,4 +28,10 @@ class ClockDownCounter extends Thread
 			}
 		}
 	}
+	@Override
+	public int getTime()
+	{
+		return currentTime;
+	}
+
 }

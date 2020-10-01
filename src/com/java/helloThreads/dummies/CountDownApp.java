@@ -10,13 +10,13 @@ public class CountDownApp
 	}
 	public static void main(String[] args)
 	{
-
+		ClockDownCounter clock = new ClockDownCounter(LaunchEvent.maxDelay);
 		//initialize my launch tasks
-		Runnable floodLight = new LaunchEvent(16,  getTask("begin the flood light"));
-		Runnable ignition =   new LaunchEvent(6,   getTask("start the enginess!!"));
-		Runnable liftOff =    new LaunchEvent(0,   getTask("|| lift Off ||"));
+		Runnable floodLight = new LaunchEvent(16,  getTask("begin the flood light"), clock);
+		Runnable ignition =   new LaunchEvent(6,   getTask("start the enginess!!"), clock);
+		Runnable liftOff =    new LaunchEvent(0,   getTask("|| lift Off ||"), clock);
 
-		new ClockDownCounter(LaunchEvent.maxDelay).start();
+		clock.start();
 		new Thread(floodLight).start();
 		new Thread(ignition).start();
 		new Thread(liftOff).start();
