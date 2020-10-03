@@ -22,7 +22,7 @@ public class CountDownClock extends Thread
 			{}
 		}
 	}
-
+	//broken
 	@Override
 	public int getTime()
 	{

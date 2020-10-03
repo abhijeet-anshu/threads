@@ -33,6 +33,7 @@ public class LaunchEvent implements Runnable
 		}
 		while(clock.getTime()>maxDelay-myDelay)
 			try{
+				//broken
 				Thread.sleep(500);
 				System.out.println("time fetched:"+ clock.getTime());
 			}catch (InterruptedException e) {

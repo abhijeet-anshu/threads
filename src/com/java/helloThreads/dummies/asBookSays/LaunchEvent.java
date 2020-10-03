@@ -36,6 +36,7 @@ public class LaunchEvent implements Runnable
 			}
 			catch (InterruptedException e) {}
 		}
+		//broken
 		if (tm.getTime() <= start)
 		{
 			System.out.println(this.message);

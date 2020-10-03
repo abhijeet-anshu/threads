@@ -31,6 +31,7 @@ class ClockDownCounter extends Thread
 	@Override
 	public int getTime()
 	{
+		//broken
 		return currentTime;
 	}
 
