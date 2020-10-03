@@ -16,7 +16,7 @@ public class CountDownClock extends Thread
 			System.out.println("T minus " + t);
 			try
 			{
-				Thread.sleep(1000);
+				Thread.sleep(1000); // thread is processing som
 			}
 			catch (InterruptedException e)
 			{}

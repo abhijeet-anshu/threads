@@ -33,14 +33,20 @@ public class LaunchEvent implements Runnable
 			try
 			{
 				Thread.sleep(10);
+			} catch (InterruptedException e)
+			{
 			}
-			catch (InterruptedException e) {}
-		}
-		//broken
-		if (tm.getTime() <= start)
-		{
-			System.out.println(this.message);
-			eventDone = true;
+
+			//broken
+			int _time = tm.getTime();
+			if (_time <= start)
+			{
+				System.out.println(this.message);
+				eventDone = true;
+			} else
+			{
+				//System.out.println(("----" + _time));
+			}
 		}
 	}
 
