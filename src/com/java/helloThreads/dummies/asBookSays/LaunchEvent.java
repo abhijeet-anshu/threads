@@ -4,14 +4,14 @@ package com.java.helloThreads.dummies.asBookSays;
  * This class launches an event after a given delay
  * It accepts the event as constructor parameter, and executes it after being initiated.
  */
-public class LaunchEvent implements Runnable
+public class LaunchEvent extends Thread
 {
 	static final int maxDelay = 20; //20s
 	int myDelay;
 	Runnable myTask;
 	TimeMonitor clock;
 
-	private int start;
+	int start;
 	private String message;
 	TimeMonitor tm;
 
@@ -28,26 +28,21 @@ public class LaunchEvent implements Runnable
 	public void run()
 	{
 		boolean eventDone = false;
-		while (!eventDone)
+		synchronized (this)
 		{
-			try
+			while (tm.getTime() > start)
 			{
-				Thread.sleep(10);
-			} catch (InterruptedException e)
-			{
-			}
-
-			//broken
-			int _time = tm.getTime();
-			if (_time <= start)
-			{
-				System.out.println(this.message);
-				eventDone = true;
-			} else
-			{
-				//System.out.println(("----" + _time));
+				try
+				{
+					wait();
+				} catch (InterruptedException e)
+				{
+				}
 			}
 		}
+
+		System.out.println(this.message);
+		//exit thread
 	}
 
 }
