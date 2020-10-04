@@ -1,4 +1,4 @@
-package com.java.helloThreads.javatpoint.basics;
+package com.java.helloThreads.javatpoint.multithreading;
 
 public class ThreadTwice
 {

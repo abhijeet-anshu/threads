@@ -1,4 +1,4 @@
-package com.java.helloThreads.javatpoint.basics.common;
+package com.java.helloThreads.javatpoint.multithreading.common;
 
 public class ThreadCommonTask
 {

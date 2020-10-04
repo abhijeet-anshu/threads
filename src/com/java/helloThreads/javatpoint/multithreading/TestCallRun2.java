@@ -1,6 +1,6 @@
-package com.java.helloThreads.javatpoint.basics;
+package com.java.helloThreads.javatpoint.multithreading;
 
-import com.java.helloThreads.javatpoint.basics.common.ThreadCommonTask;
+import com.java.helloThreads.javatpoint.multithreading.common.ThreadCommonTask;
 
 public class TestCallRun2
 {
