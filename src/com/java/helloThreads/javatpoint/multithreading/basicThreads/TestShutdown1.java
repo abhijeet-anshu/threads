@@ -1,4 +1,4 @@
-package com.java.helloThreads.javatpoint.multithreading;
+package com.java.helloThreads.javatpoint.multithreading.basicThreads;
 
 class MyThread extends Thread{
 	public void run(){

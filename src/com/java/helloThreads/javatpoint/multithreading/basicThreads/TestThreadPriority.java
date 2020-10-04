@@ -1,4 +1,4 @@
-package com.java.helloThreads.javatpoint.multithreading;
+package com.java.helloThreads.javatpoint.multithreading.basicThreads;
 
 /*
 public static int MIN_PRIORITY 1

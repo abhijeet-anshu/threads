@@ -1,4 +1,4 @@
-package com.java.helloThreads.javatpoint.multithreading;
+package com.java.helloThreads.javatpoint.multithreading.basicThreads;
 
 import com.java.helloThreads.javatpoint.multithreading.common.ThreadCommonTask;
 
