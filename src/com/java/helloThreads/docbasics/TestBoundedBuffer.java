@@ -22,7 +22,7 @@ public class TestBoundedBuffer
 		//test the bound buffer generated
 
 		final int BoundBufferCapacity = 500;
-		final int MaxThreadSize = 150;
+		final int MaxThreadSize = 200;
 
 
 		final int arrSize = 10000;

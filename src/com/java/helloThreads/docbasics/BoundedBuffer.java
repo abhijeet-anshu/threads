@@ -45,7 +45,7 @@ public class BoundedBuffer
 				startPointer = 0;
 
 
-			notFull.signalAll();
+			notFull.signal();
 			return value;
 
 		}
@@ -67,7 +67,7 @@ public class BoundedBuffer
 			count++;
 			if(++endPointer == _Array.length)
 				endPointer = 0;
-			notEmpty.signalAll();
+			notEmpty.signal();
 		}
 		finally
 		{
