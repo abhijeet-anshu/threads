@@ -1,4 +1,4 @@
-package com.java.helloThreads.Synchronization.interrupt;
+package com.java.helloThreads.javatpoint.Synchronization.interrupt;
 
 import java.util.Random;
 

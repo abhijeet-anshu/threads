@@ -1,4 +1,4 @@
-package com.java.helloThreads.Synchronization.reEntrant;
+package com.java.helloThreads.javatpoint.Synchronization.reEntrant;
 
 public class ReentrantMonitorExample
 {

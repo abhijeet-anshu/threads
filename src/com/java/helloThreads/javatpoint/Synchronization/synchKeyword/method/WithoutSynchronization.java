@@ -1,4 +1,4 @@
-package com.java.helloThreads.Synchronization.synchKeyword.method;
+package com.java.helloThreads.javatpoint.Synchronization.synchKeyword.method;
 
 class Table {
 	void printTable(int num)

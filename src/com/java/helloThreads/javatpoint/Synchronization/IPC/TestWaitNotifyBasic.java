@@ -1,4 +1,4 @@
-package com.java.helloThreads.Synchronization.IPC;
+package com.java.helloThreads.javatpoint.Synchronization.IPC;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

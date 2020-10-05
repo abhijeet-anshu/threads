@@ -1,4 +1,4 @@
-package com.java.helloThreads.Synchronization.Deadlock;
+package com.java.helloThreads.javatpoint.Synchronization.Deadlock;
 
 public class TestDeadlock
 {

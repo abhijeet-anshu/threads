@@ -1,13 +1,16 @@
-package com.java.helloThreads.Synchronization.synchKeyword.Static;
+package com.java.helloThreads.javatpoint.Synchronization.synchKeyword.ClassSynchBlock;
 
 
 public class WithSynchronization
 {
-	synchronized static void printTable(int num)
+	static void printTable(int num)
 	{
 		System.out.println("thread that has lock will print: table of " + num);
-			for(int i=1; i<=9; i++)
-				System.out.println(num+" * " + i + " = " + (num*i));
+		synchronized (WithSynchronization.class)
+		{
+			for (int i = 1; i <= 9; i++)
+				System.out.println(num + " * " + i + " = " + (num * i));
+		}
 	}
 	public static void main(String[] args)
 	{
