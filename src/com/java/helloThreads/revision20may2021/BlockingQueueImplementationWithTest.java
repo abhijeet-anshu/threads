@@ -2,19 +2,20 @@ package com.java.helloThreads.revision20may2021;
 
 import java.lang.reflect.Array;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
-import java.util.function.IntFunction;
-import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 public class BlockingQueueImplementationWithTest {
 
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     final static Consumer<String> printer = s ->
     {
@@ -34,9 +35,10 @@ public class BlockingQueueImplementationWithTest {
         private final Condition notFull = queueLock.newCondition();
         private final Condition notEmpty = queueLock.newCondition();
 
-       BQCustom(Class<T> c,  int capacity) {
+       BQCustom ( int capacity) {
             MAX_CAPACITY = capacity;
-           array =(T[])Array.newInstance(c, MAX_CAPACITY);
+
+           array = (T[]) new Object[MAX_CAPACITY];
         }
 
         /**
@@ -122,11 +124,11 @@ public class BlockingQueueImplementationWithTest {
     }
 
     public static void main(String[] args) {
-        BQCustom<Integer> myBQ = new BQCustom<Integer>(Integer.class, 30);
-        final int times = 100000;
+        BQCustom<Integer> myBQ = new BQCustom<Integer>( 30);
+        final int times = 500;
         Thread consumerImpl = new Thread(consumerImplementation(myBQ, times));
         Thread supplierImpl =  new Thread(supplierImplementation(myBQ, times));
-
+        ArrayBlockingQueue<Integer> abc = new ArrayBlockingQueue<>(100);
         supplierImpl.start();
         consumerImpl.start();
         try {
